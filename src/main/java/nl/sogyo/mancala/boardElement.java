@@ -7,7 +7,7 @@ public abstract class boardElement {
     the shared different behaviors. It cannot be instantiated.
      */
     protected int stones;
-    protected int owner; //should only be 1 or 2
+    protected Player owner; //should only be 1 or 2
 
     public int getOwner() {
         return this.owner;
@@ -34,23 +34,25 @@ public abstract class boardElement {
 
     }
 
-    public boardElement(boardElement neighbour, int owner) {
+    public boardElement(boardElement neighbour, Player owner) {
         this(null);
 
         for (int i=0; i<14; i++) {
-            if (i <= 6) {this.owner = 1;}
-            else {this.owner = 2;} //this is meant to set the owner of the objects, first 7 to owner 1, last 7 to 2
+            if (i <= 6) {this.owner = Player1;}
+            else {this.owner = Player2;} //this is meant to set the owner of the objects, first 7 to owner 1, last 7 to 2
         }
     }
 
-    public boardElement(boardElement neighbour, int owner, int stones, int place) {
-        this(null,0);
+    public boardElement(boardElement neighbour, Player owner, int stones, int place) {
+        this(null,null);
 
         //Fill the boardElement array with bowl or kalaha objects according to position
+
+        //This for loop should not be in a constructor! because every time the constructor is called, the loop goes.
         for (int i=0; i<14; i++) {
-            if ((i == 6) || (i == 13)) {gameBoard[i] = new Kalaha(null,1,0,i);}
+            if ((i == 6) || (i == 13)) {gameBoard[i] = new Kalaha(null,null,0,i);}
 //            else if (i==13) {gameBoard[i] = new Kalaha();}
-            else {gameBoard[i] = new Bowl(null,1,4,i);}
+            else {gameBoard[i] = new Bowl(null, null,4,i);}
 
         }
     }
