@@ -6,55 +6,44 @@ public abstract class boardElement {
     Therefore this allows for the condensation of the shared same behaviors, whilst allowing for
     the shared different behaviors. It cannot be instantiated.
      */
-    protected int stones;
-    protected Player owner; //should only be 1 or 2
+    private int stones;
+    private Player owner;
+    private boardElement neighbour;
+    public Bowl bowl1;
 
-    public int getOwner() {
-        return this.owner;
-    }
+    public Player getOwner() {return this.owner;}
 
     public int getStones() {return this.stones;} //This might not be needed because stones is protected instead of private
     public void setStones(int newStones) {this.stones = newStones;}
 
-    //private boardElement neighbour; //Apparently this doesn't need to be in the class..
-    private int place;
-    public boardElement[] gameBoard = new boardElement[14];
-    //initialize an array containing all the boardelements to be filled in the constructor
+    public static int counter = 0; //counter keeping track of how often constructor has been called
 
-    public boardElement(boardElement neighbour) {
-
-        if (this.place == 13) {this.neighbour = gameBoard[0];}
-        else {this.neighbour = gameBoard[this.place+1];}
-
-//        this.neighbour = new Kalaha(null,0,0,0);
-        /*does this work? Declaring the variable neighbour within an object to create a new object
-        which is the neighbour(through the for loop below perhaps?)
-        This part of the constructor is meant to set the neighbour variable of the objects, but also instantiate
-        the next object (which is the neighbour of the current object) in one step.*/
-
+    public boardElement (String name1, String name2) { //constructor for bowl1
+        counter++;
+        this.stones = 4;
+        this.owner = new Player(name1, name2);
+        this.neighbour = new Bowl(neighbour, owner, 4);
     }
 
-    public boardElement(boardElement neighbour, Player owner) {
-        this(null);
+    public boardElement (boardElement neighbour, Player owner) { //constructor for the Kalaha's
+        counter ++;
+        if (counter == 14) {
+            this.neighbour = bowl1; //bowl1 doesn't exist yet?, because this is still happening within the constructor stack of bowl1..
+        }
+        else this.neighbour = new Bowl(neighbour, owner.GetOpponent(), 4);
+    }
 
-        for (int i=0; i<14; i++) {
-            if (i <= 6) {this.owner = Player1;}
-            else {this.owner = Player2;} //this is meant to set the owner of the objects, first 7 to owner 1, last 7 to 2
+    public boardElement (boardElement neighbour, Player owner, int stones) { //constructor for the other bowls
+        counter++;
+
+        if ((counter == 6) || (counter == 13)) {
+            this.neighbour = new Kalaha(null, this.owner);
+        }
+        else  {
+            this.neighbour = new Bowl(null, this.owner, 4); //still needs parameters pointing to the right constructor
         }
     }
 
-    public boardElement(boardElement neighbour, Player owner, int stones, int place) {
-        this(null,null);
-
-        //Fill the boardElement array with bowl or kalaha objects according to position
-
-        //This for loop should not be in a constructor! because every time the constructor is called, the loop goes.
-        for (int i=0; i<14; i++) {
-            if ((i == 6) || (i == 13)) {gameBoard[i] = new Kalaha(null,null,0,i);}
-//            else if (i==13) {gameBoard[i] = new Kalaha();}
-            else {gameBoard[i] = new Bowl(null, null,4,i);}
-
-        }
-    }
+    public abstract void AddAndPass();
 }
 
