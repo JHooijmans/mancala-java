@@ -6,7 +6,7 @@ public class Player {
     private String name;
 
 
-    public Player(String name1, String name2) { //creates player 1, sets the name, opponent and it's turn to true
+    public Player(String name1, String name2) {
         this.turn = true;
         this.name = name1;
         this.opponent = new Player(name2);

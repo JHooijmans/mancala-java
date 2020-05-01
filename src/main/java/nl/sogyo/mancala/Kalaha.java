@@ -2,14 +2,22 @@ package nl.sogyo.mancala;
 
 public class Kalaha extends boardElement {
 
-    public Kalaha(boardElement neighbour, Player owner) {
-        super(neighbour, owner);
-
+    public Kalaha(Player owner) {
+        counter ++;
+        this.owner = owner;
+        if (counter == 14) {
+            this.neighbour = bowl1;
+        }
+        else this.neighbour = new Bowl(owner.GetOpponent());
     }
 
-    public void AddAndPass() {
-
+    public void AddAndPass(int counter) {
+        if (counter > 0) {
+            counter = counter - 1;
+            this.stones = this.stones + 1;
+            this.neighbour.AddAndPass(counter);
+        }
+        else {System.out.println("change turn now Kalaha");}//owner.ChangeTurn();}
     }
 
-//Player.isTurn(); //needs to get turn true or false from the player class
 }
