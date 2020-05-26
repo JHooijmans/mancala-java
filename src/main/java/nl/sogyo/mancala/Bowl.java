@@ -31,7 +31,8 @@ public class Bowl extends boardElement {
             this.stones++;
             this.neighbour.AddAndPass(counter);
         }
-        else {System.out.println("change turn now Bowl");} //owner.ChangeTurn();}
+        else {System.out.println("change turn now Bowl");
+            owner.ChangeTurn(false);}
     }
 
     public void EmptyAndPass() {

@@ -18,8 +18,11 @@ public class Player {
         this.name = name2;
     }
 
-    public boolean isTurn() {return turn;}
-    public void changeTurn(boolean setTurn) {this.turn = setTurn;}
+    public boolean IsTurn() {return turn;}
+    public void ChangeTurn(boolean setTurn) {
+        this.turn = setTurn;
+        this.opponent.turn = !setTurn;
+    }
 
     public Player GetOpponent() {return this.opponent;}
 }

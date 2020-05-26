@@ -13,12 +13,13 @@ public abstract class boardElement {
     public Player getOwner() {return this.owner;}
 
     public int getStones() {return this.stones;} //This might not be needed because stones is protected instead of private
-    public void setStones(int newStones) {this.stones = newStones;}
 
     public boardElement getNeighbour() {
         return neighbour;
     }
 
     public abstract void AddAndPass(int counter);
+
+    public abstract void EmptyAndPass();
 }
 

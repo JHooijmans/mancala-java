@@ -17,7 +17,12 @@ public class Kalaha extends boardElement {
             this.stones = this.stones + 1;
             this.neighbour.AddAndPass(counter);
         }
-        else {System.out.println("change turn now Kalaha");}//owner.ChangeTurn();}
+        else {System.out.println("change turn now Kalaha");
+            owner.ChangeTurn(true);}
+    }
+
+    public void EmptyAndPass() {
+        System.out.println("Invalid move, cannot start a turn on a Kalaha");
     }
 
 }
