@@ -7,11 +7,10 @@ image: maven:latest
 build:
   stage: build
   script: mvn compile 
-    - echo "This job builds something."
+
 
 test:
   stage: test
   script: mvn test 
-    - echo "This job tests something. It will only run when all jobs in the"
-    - echo "build stage are complete."
+
 
