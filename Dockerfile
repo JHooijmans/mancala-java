@@ -1,6 +1,6 @@
 FROM maven:latest
 
-WORKINGDIR /app
+WORKDIR /app
 
 RUN mvn install
 
