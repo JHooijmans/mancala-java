@@ -1,16 +1,10 @@
-stages:
-  - build
-  - test
+image: docker:latest
 
-image: maven:latest
+services: 
+  - docker:dind
 
 build:
   stage: build
-  script: mvn compile 
-
-
-test:
-  stage: test
-  script: mvn test 
-
-
+  script: 
+    - docker build -t mancalaDocker .
+    - docker run --name test mancalaDocker mvn test

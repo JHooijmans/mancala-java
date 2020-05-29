@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: nl.sogyo.mancala.domain.MancalaTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.144 sec <<< FAILURE!
-testEmptyAndPass(nl.sogyo.mancala.domain.MancalaTest)  Time elapsed: 0.031 sec  <<< ERROR!
+Tests run: 5, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.152 sec <<< FAILURE!
+testEmptyAndPass(nl.sogyo.mancala.domain.MancalaTest)  Time elapsed: 0.029 sec  <<< ERROR!
 java.lang.StackOverflowError
 	at nl.sogyo.mancala.Bowl.<init>(Bowl.java:20)
 	at nl.sogyo.mancala.Bowl.<init>(Bowl.java:20)
@@ -1029,7 +1029,7 @@ java.lang.StackOverflowError
 	at nl.sogyo.mancala.Bowl.<init>(Bowl.java:20)
 	at nl.sogyo.mancala.Bowl.<init>(Bowl.java:20)
 
-testPlayerChangeIfRoundEndsInBowl(nl.sogyo.mancala.domain.MancalaTest)  Time elapsed: 0.02 sec  <<< ERROR!
+testPlayerChangeIfRoundEndsInBowl(nl.sogyo.mancala.domain.MancalaTest)  Time elapsed: 0.023 sec  <<< ERROR!
 java.lang.StackOverflowError
 	at nl.sogyo.mancala.Bowl.<init>(Bowl.java:20)
 	at nl.sogyo.mancala.Bowl.<init>(Bowl.java:20)
@@ -2056,7 +2056,7 @@ java.lang.StackOverflowError
 	at nl.sogyo.mancala.Bowl.<init>(Bowl.java:20)
 	at nl.sogyo.mancala.Bowl.<init>(Bowl.java:20)
 
-testPlayerTurnAgainIfRoundEndsInKalaha(nl.sogyo.mancala.domain.MancalaTest)  Time elapsed: 0.016 sec  <<< ERROR!
+testPlayerTurnAgainIfRoundEndsInKalaha(nl.sogyo.mancala.domain.MancalaTest)  Time elapsed: 0.015 sec  <<< ERROR!
 java.lang.StackOverflowError
 	at nl.sogyo.mancala.Bowl.<init>(Bowl.java:20)
 	at nl.sogyo.mancala.Bowl.<init>(Bowl.java:20)

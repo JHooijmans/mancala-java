@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="nl.sogyo.mancala.domain.MancalaTest" time="0.074" errors="3" skipped="0">
+<testsuite tests="5" failures="0" name="nl.sogyo.mancala.domain.MancalaTest" time="0.073" errors="3" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="14+36-1461"/>
@@ -60,9 +60,9 @@
     <property name="sun.stdout.encoding" value="cp437"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="nl.sogyo.mancala.domain.MancalaTest" name="testInitialisationValues" time="0.007"/>
+  <testcase classname="nl.sogyo.mancala.domain.MancalaTest" name="testInitialisationValues" time="0.006"/>
   <testcase classname="nl.sogyo.mancala.domain.MancalaTest" name="testApp" time="0"/>
-  <testcase classname="nl.sogyo.mancala.domain.MancalaTest" name="testEmptyAndPass" time="0.031">
+  <testcase classname="nl.sogyo.mancala.domain.MancalaTest" name="testEmptyAndPass" time="0.029">
     <error type="java.lang.StackOverflowError">java.lang.StackOverflowError
 	at nl.sogyo.mancala.Bowl.&lt;init&gt;(Bowl.java:20)
 	at nl.sogyo.mancala.Bowl.&lt;init&gt;(Bowl.java:20)
@@ -1090,7 +1090,7 @@
 	at nl.sogyo.mancala.Bowl.&lt;init&gt;(Bowl.java:20)
 </error>
   </testcase>
-  <testcase classname="nl.sogyo.mancala.domain.MancalaTest" name="testPlayerChangeIfRoundEndsInBowl" time="0.02">
+  <testcase classname="nl.sogyo.mancala.domain.MancalaTest" name="testPlayerChangeIfRoundEndsInBowl" time="0.023">
     <error type="java.lang.StackOverflowError">java.lang.StackOverflowError
 	at nl.sogyo.mancala.Bowl.&lt;init&gt;(Bowl.java:20)
 	at nl.sogyo.mancala.Bowl.&lt;init&gt;(Bowl.java:20)
@@ -2118,7 +2118,7 @@
 	at nl.sogyo.mancala.Bowl.&lt;init&gt;(Bowl.java:20)
 </error>
   </testcase>
-  <testcase classname="nl.sogyo.mancala.domain.MancalaTest" name="testPlayerTurnAgainIfRoundEndsInKalaha" time="0.016">
+  <testcase classname="nl.sogyo.mancala.domain.MancalaTest" name="testPlayerTurnAgainIfRoundEndsInKalaha" time="0.015">
     <error type="java.lang.StackOverflowError">java.lang.StackOverflowError
 	at nl.sogyo.mancala.Bowl.&lt;init&gt;(Bowl.java:20)
 	at nl.sogyo.mancala.Bowl.&lt;init&gt;(Bowl.java:20)

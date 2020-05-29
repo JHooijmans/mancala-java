@@ -14,11 +14,11 @@ public class MancalaTest {
     }
 
     @Test
-    public void testInitialisationValues() {
+    public void testInitialisationValues() { //These tests should be split into separate test methods
         Bowl bowl1 = new Bowl("name1", "name2");
         Assert.assertEquals("Bowl should start with 4 stones`", 4, bowl1.getStones());
         Assert.assertEquals("Kalaha should start with 0 stones`", 0, bowl1.getNeighbour().getNeighbour().getNeighbour().getNeighbour().getNeighbour().getNeighbour().getStones());
-        Assert.assertTrue("bowl1 has the same owner as bowl8",bowl1.getOwner() != bowl1.getNeighbour().getNeighbour().getNeighbour().getNeighbour().getNeighbour().getNeighbour().getNeighbour().getOwner());
+        Assert.assertNotSame("bowl1 has the same owner as bowl8", bowl1.getOwner(), bowl1.getNeighbour().getNeighbour().getNeighbour().getNeighbour().getNeighbour().getNeighbour().getNeighbour().getOwner());
     }
 
     @Test
@@ -33,14 +33,14 @@ public class MancalaTest {
     public void testPlayerChangeIfRoundEndsInBowl() {
         Bowl bowl1 = new Bowl("name1", "name2");
         bowl1.EmptyAndPass();
-        Assert.assertEquals("Player turn should change if distributing stones ends in a bowl", false, bowl1.getOwner().IsTurn());
+        Assert.assertFalse("Player turn should change if distributing stones ends in a bowl", bowl1.getOwner().IsTurn());
     }
 
     @Test
     public void testPlayerTurnAgainIfRoundEndsInKalaha() {
         Bowl bowl1 = new Bowl("name1", "name2");
         bowl1.getNeighbour().getNeighbour().EmptyAndPass();
-        Assert.assertEquals("Bowl should be emptied but still contains stones", true, bowl1.getOwner().IsTurn());
+        Assert.assertTrue("Bowl should be emptied but still contains stones", bowl1.getOwner().IsTurn());
     }
 
 
