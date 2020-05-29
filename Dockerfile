@@ -1,7 +1,5 @@
 FROM maven:latest
 
-WORKDIR /app
-
 RUN mvn install
 
 COPY . . 
