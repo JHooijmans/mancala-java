@@ -1,8 +1,10 @@
 FROM maven:latest
 
-RUN mvn install
+WORKDIR /mancala-java
 
 COPY . . 
+
+RUN mvn install
 
 RUN mvn compile
 
