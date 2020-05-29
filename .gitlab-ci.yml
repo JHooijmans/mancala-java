@@ -6,5 +6,5 @@ services:
 build:
   stage: build
   script: 
-    - docker build -t mancalaDocker .
+    - docker build -t mancaladocker .
     - docker run --name test mancalaDocker mvn test
